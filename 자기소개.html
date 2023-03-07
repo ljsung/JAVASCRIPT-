@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #menubar {
+            background: cornflowerblue;
+            width: 100%;
+            height: 100px;
+        }
+
+        .menu {
+            border: 1px solid black;
+            margin: 0;
+        }
+
+        .li {
+            float: left;
+            text-decoration: none;
+            list-style: none;
+            margin-left: 60px;
+        }
+
+        .li:hover {
+            background-color: #eee;
+        }
+
+        .a:hover {
+            color: black;
+        }
+    </style>
+</head>
+
+<body style="margin: 0">
+    <div id="root"></div>
+    <script type="text/babel">
+        const style = {
+            backgroundColor: 'black',
+            color: 'white',
+            cursor: 'pointer',
+            textAlign: 'center',
+            padding: 20,
+            margin: 0
+        };
+
+        function Header() {
+            return (
+                <>
+                <h1 style={style}>Let me introduce my self</h1>
+                </>
+            );
+        }
+
+
+        function Menubar() {
+
+            return (
+                <>
+                    <div id='menubar'>
+                        <ul className='menu'>
+                            <li className='li'><a href="https://naver.com" className='a'>자기소개</a></li>
+                            <li className='li'><a href="#" className='a'>로드맵</a></li>
+                            <li className='li'><a href="#" className='a'>여행소개</a></li>
+                            <li className='li'><a href="#" className='a'>포트폴리오</a></li>
+                        </ul>
+                    </div>
+                </>
+            );
+        }
+
+        function Main() {
+            return [Header(), Menubar()];
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<Main />);
+    </script>
+</body>
+
+</html>
